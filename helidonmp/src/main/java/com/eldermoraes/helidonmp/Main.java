@@ -44,7 +44,7 @@ public final class Main {
         // start the server
         Server server = startServer();
 
-        System.out.println("http://localhost:" + server.port() + "/developer");
+        System.out.println("http://localhost:" + server.port() + "/developers");
     }
 
     /**

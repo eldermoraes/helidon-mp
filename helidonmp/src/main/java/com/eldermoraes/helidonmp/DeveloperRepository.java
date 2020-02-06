@@ -18,6 +18,14 @@ public class DeveloperRepository {
     
     private final List<Developer> developers = new ArrayList<>();
 
+    public DeveloperRepository() {
+        developers.add(new Developer(1L, "Elder"));
+        developers.add(new Developer(2L, "Otavio"));
+        developers.add(new Developer(3L, "Poliana"));
+        developers.add(new Developer(4L, "Bruno"));
+        developers.add(new Developer(5L, "Edson"));
+    }
+
     public List<Developer> getDevelopers() {
         return developers;
     }

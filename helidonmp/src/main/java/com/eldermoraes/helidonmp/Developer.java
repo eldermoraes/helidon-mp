@@ -9,9 +9,10 @@ package com.eldermoraes.helidonmp;
  *
  * @author eldmorae
  */
-class Developer {
+public class Developer {
     
     private Long id;
+
     private String name;
     
     public Developer(Long id, String name) {
@@ -19,26 +20,30 @@ class Developer {
         this.name = name;
     }
 
-    protected Developer() {
+    public Developer() {
     }
 
-
-    protected Long getId() {
+    public Long getId() {
         return id;
     }
 
-    protected void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
-    protected void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
