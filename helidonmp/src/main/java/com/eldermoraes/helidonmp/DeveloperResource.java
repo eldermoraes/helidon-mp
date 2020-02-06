@@ -20,14 +20,14 @@ import javax.ws.rs.core.Response;
  *
  * @author eldmorae
  */
-@Path("/developer")
+@Path("/developers")
 @RequestScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class DeveloperResource {
     
     @Inject
-    DeveloperRepository developerRepository;
+    private DeveloperRepository developerRepository;
     
     
     @GET        
@@ -37,7 +37,6 @@ public class DeveloperResource {
     }
     
     @POST
-    @Path("/newDeveloper")
     public Response newDeveloper(Developer developer){
         System.out.println("developer: " + developer);
         return Response.ok(developerRepository.add(developer)).build();
