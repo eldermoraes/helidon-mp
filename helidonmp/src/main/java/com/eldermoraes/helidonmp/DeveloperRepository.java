@@ -5,9 +5,10 @@
  */
 package com.eldermoraes.helidonmp;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import javax.enterprise.context.ApplicationScoped;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Metered;
 
 /**
  *
@@ -16,20 +17,14 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class DeveloperRepository {
     
-    private final List<Developer> developers = new ArrayList<>();
+    private final HashSet<Developer> developers = new HashSet<>();
 
-    public DeveloperRepository() {
-        developers.add(new Developer(1L, "Elder"));
-        developers.add(new Developer(2L, "Otavio"));
-        developers.add(new Developer(3L, "Poliana"));
-        developers.add(new Developer(4L, "Bruno"));
-        developers.add(new Developer(5L, "Edson"));
-    }
-
-    public List<Developer> getDevelopers() {
+    @Metered
+    public HashSet<Developer> getDevelopers() {
         return developers;
     }
     
+    @Counted
     public Developer add(Developer developer){
         developers.add(developer);
         return developer;
